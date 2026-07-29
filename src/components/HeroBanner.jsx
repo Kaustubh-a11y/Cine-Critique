@@ -1,7 +1,7 @@
 import React from 'react';
 import { getImageUrl } from '../services/tmdbApi';
 import { useApp } from '../context/AppContext';
-import { Play, Star, Info, Edit3, Bookmark, Check } from 'lucide-react';
+import { Star, Info, Bookmark, Check } from 'lucide-react';
 
 export const HeroBanner = ({ movie }) => {
   const { setSelectedMovieId, watchlist, toggleWatchlist, getMovieAverageRating } = useApp();
@@ -16,11 +16,12 @@ export const HeroBanner = ({ movie }) => {
 
   const isBookmarked = watchlist.includes(movie.id);
   const blendedRating = getMovieAverageRating(movie.id, movie.vote_average);
+  const backdropImage = movie.poster_path || movie.backdrop_path;
 
   return (
     <div className="hero-banner">
       <img
-        src={getImageUrl(movie.backdrop_path, 'original')}
+        src={getImageUrl(backdropImage)}
         alt={movie.title}
         className="hero-backdrop"
       />
