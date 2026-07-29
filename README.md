@@ -1,6 +1,6 @@
 # CineCritique | Premium Movie Reviews & Ratings 🎬✨
 
-![CineCritique Homepage](cinecritique_home.png)
+![CineCritique Homepage](src/screenshots/cinecritique_home.png)
 
 > **CineCritique** is a modern, high-performance Movie Review & Rating web application built with React 18, Vite, and custom Glassmorphic CSS. It provides live movie discovery, embedded YouTube trailers, cast details, interactive 10-star verified user reviews with spoiler protection, and personal watchlist management — **100% Free with zero API key required!**
 
@@ -23,10 +23,10 @@
 ## 📸 Application Screenshots
 
 ### 1. Main Explore Page & Featured Blockbuster
-![CineCritique Homepage Banner and Movie Grid](cinecritique_home.png)
+![CineCritique Homepage Banner and Movie Grid](src/screenshots/cinecritique_home.png)
 
 ### 2. Interactive Movie Detail Modal & Reviews
-![CineCritique Movie Detail Modal](cinecritique_modal.png)
+![CineCritique Movie Detail Modal](src/screenshots/cinecritique_modal.png)
 
 ---
 
