@@ -1,4 +1,4 @@
-# CineCritique | Premium Movie Reviews & Ratings 🎬✨
+# CineCritique | Using TMDB API 🎬✨
 
 ![CineCritique Homepage](src/screenshots/cinecritique_home.png)
 
