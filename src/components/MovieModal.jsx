@@ -10,7 +10,7 @@ import {
 import { ReviewForm } from './ReviewForm';
 import { 
   X, Star, Clock, Calendar, Bookmark, Check, ThumbsUp, 
-  Trash2, MessageSquare, Play, Film, EyeOff 
+  Trash2, MessageSquare, Play, User, EyeOff 
 } from 'lucide-react';
 
 export const MovieModal = () => {
@@ -82,7 +82,7 @@ export const MovieModal = () => {
             {/* Header Backdrop Banner */}
             <div className="modal-header-banner">
               <img
-                src={getImageUrl(details.backdrop_path, 'original')}
+                src={getImageUrl(details.poster_path || details.backdrop_path)}
                 alt={details.title}
                 className="modal-backdrop-img"
               />
@@ -93,7 +93,7 @@ export const MovieModal = () => {
             <div className="modal-body">
               <div className="modal-main-grid">
                 <img
-                  src={getImageUrl(details.poster_path, 'w500')}
+                  src={getImageUrl(details.poster_path)}
                   alt={details.title}
                   className="modal-poster"
                 />
@@ -181,22 +181,20 @@ export const MovieModal = () => {
                 </button>
               </div>
 
-              {/* Tab 1: Cast & Similar */}
+              {/* Tab 1: Cast (Names & Roles without dummy images) & Similar */}
               {activeTab === 'overview' && (
                 <>
                   {cast.length > 0 && (
                     <div className="cast-section">
-                      <h4 className="section-subtitle">Top Cast & Crew</h4>
-                      <div className="cast-carousel">
+                      <h4 className="section-subtitle">Featured Cast Members</h4>
+                      <div className="cast-badges-grid">
                         {cast.map(c => (
-                          <div key={c.id} className="cast-card">
-                            <img
-                              src={getImageUrl(c.profile_path, 'w185')}
-                              alt={c.name}
-                              className="cast-avatar"
-                            />
-                            <div className="cast-name">{c.name}</div>
-                            <div className="cast-character">{c.character}</div>
+                          <div key={c.id} className="cast-pill-card">
+                            <User size={15} color="#e50914" style={{ flexShrink: 0 }} />
+                            <div>
+                              <div className="cast-pill-name">{c.name}</div>
+                              <div className="cast-pill-role">{c.character}</div>
+                            </div>
                           </div>
                         ))}
                       </div>
@@ -214,7 +212,7 @@ export const MovieModal = () => {
                             onClick={() => setSelectedMovieId(sim.id)}
                           >
                             <img
-                              src={getImageUrl(sim.poster_path, 'w185')}
+                              src={getImageUrl(sim.poster_path)}
                               alt={sim.title}
                               style={{ width: '100%', aspectRatio: '2/3', objectFit: 'cover' }}
                             />
