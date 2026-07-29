@@ -1,4 +1,4 @@
-# CineCritique | Using TMDB API 🎬✨
+# CineCritique | Using tvmaze API 🎬✨
 
 ![CineCritique Homepage](src/screenshots/cinecritique_home.png)
 
